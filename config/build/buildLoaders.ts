@@ -10,7 +10,14 @@ export function buildLoaders(options: buildOpions): ModuleOptions['rules'] {
         test: /\.s[ac]ss$/i,
         use: [
             isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-            "css-loader",
+            {
+                loader: "css-loader",
+                options: {
+                    modules: {
+                        localIdentName: isProd ? '[hash:base64:8]' : '[path][name]__[local]',
+                    }
+                },
+            },
             "sass-loader",
         ],
     }
