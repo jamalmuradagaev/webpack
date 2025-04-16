@@ -10,4 +10,5 @@ export interface buildOpions {
     port: number
     paths: buildPaths
     mode: buildMode
+    analyzer?: boolean
 }
