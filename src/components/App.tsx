@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as s from './App.module.scss';
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import About from "@/pages/About/About";
 
 const App = () => {
     const [count, setCount] = useState(0)
@@ -14,7 +15,7 @@ const App = () => {
             </div>
             <button className={s.button} onClick={() => setCount((c) => c + 1)}><p> Click </p></button>
             <p className={s.text}>count is {count}</p>
-            <Outlet />
+            <About />
         </div>
     )
 }

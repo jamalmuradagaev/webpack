@@ -2,6 +2,7 @@ import webpack from 'webpack'
 import { buildDevServer } from './buildDevServer';
 import { buildLoaders } from './buildLoaders';
 import { buildPlugins } from './buildPlugins';
+import { buildResolvers } from './buildResolvers';
 import { buildOpions } from './types/types';
 
 export function buildWebpack(options: buildOpions): webpack.Configuration {
@@ -19,9 +20,7 @@ export function buildWebpack(options: buildOpions): webpack.Configuration {
         module: {
             rules: buildLoaders(options)
         },
-        resolve: {
-            extensions: ['.tsx', '.ts', '.js'],
-        },
+        resolve: buildResolvers(options),
         devtool: isDev && 'inline-source-map',
         devServer: isDev && buildDevServer(options)
     }
