@@ -10,6 +10,14 @@ const App = () => {
     const [count, setCount] = useState(0)
     console.log(s)
 
+    if (__PLATFORM__ === 'desktop') {
+        return <div>PLATFOM IS DESKTOP</div>
+    }
+
+    if (__PLATFORM__ === 'mobile') {
+        return <div>PLATFOM IS MOBILE</div>
+    }
+
     return (
         <div>
             <div>

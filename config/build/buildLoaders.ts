@@ -1,9 +1,9 @@
 import { ModuleOptions } from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { buildOpions } from "./types/types";
+import { BuildOpions } from "./types/types";
 
 
-export function buildLoaders(options: buildOpions): ModuleOptions['rules'] {
+export function buildLoaders(options: BuildOpions): ModuleOptions['rules'] {
     const isProd = options.mode === 'production';
 
     const scssLoader = {

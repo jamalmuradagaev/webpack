@@ -3,9 +3,9 @@ import { buildDevServer } from './buildDevServer';
 import { buildLoaders } from './buildLoaders';
 import { buildPlugins } from './buildPlugins';
 import { buildResolvers } from './buildResolvers';
-import { buildOpions } from './types/types';
+import { BuildOpions } from './types/types';
 
-export function buildWebpack(options: buildOpions): webpack.Configuration {
+export function buildWebpack(options: BuildOpions): webpack.Configuration {
     const isDev = options.mode === 'development';
 
     return {
